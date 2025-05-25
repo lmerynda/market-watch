@@ -17,9 +17,11 @@ repositories {
 	mavenCentral()
 	maven { url 'https://repo.spring.io/milestone' }
 	maven { url 'https://repo.spring.io/snapshot' }
+    maven { url "https://jitpack.io" }
 }
 
 dependencies {
+    implementation 'com.github.polygon-io:client-jvm:v5.1.2' 
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
