@@ -22,6 +22,7 @@ repositories {
 
 dependencies {
     implementation 'com.github.polygon-io:client-jvm:v5.1.2' 
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
@@ -29,4 +30,13 @@ dependencies {
 
 tasks.named('test') {
 	useJUnitPlatform()
+	
+	// Show test output
+	testLogging {
+		events "passed", "skipped", "failed", "standardOut", "standardError"
+		showExceptions true
+		showCauses true
+		showStackTraces true
+		exceptionFormat "full"
+	}
 }
