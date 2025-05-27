@@ -10,12 +10,18 @@ import io.polygon.kotlin.sdk.rest.PolygonRestClient;
 
 @SpringBootApplication
 public class MarketWatchApplication {
-    private static String apiKey = "3HrbQuqNplv2NvnBG_ZDPpmd0ogyuT6B";
 
     public static void main(String[] args) {
         ApplicationContext context = SpringApplication.run(MarketWatchApplication.class, args);
 
+        // Get API key from environment variable
+        String apiKey = System.getenv("POLYGON_API_KEY");
+        if (apiKey == null || apiKey.isEmpty()) {
+            throw new IllegalStateException("POLYGON_API_KEY environment variable is not set");
+        }
+
         PolygonRestClient client = new PolygonRestClient(apiKey);
+        // client.getTechnicalIndicatorSMA("SPY", 50); // TODO: Fix SMA parameters
 
         // Get service beans from Spring context
         OptionsAggregatesService aggregatesService = context.getBean(OptionsAggregatesService.class);

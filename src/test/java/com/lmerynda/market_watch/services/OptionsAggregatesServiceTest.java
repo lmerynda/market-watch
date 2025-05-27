@@ -4,18 +4,13 @@ import io.polygon.kotlin.sdk.rest.PolygonRestClient;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
-import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.test.context.ActiveProfiles;
 
-@SpringBootTest
-@ActiveProfiles("test")
 public class OptionsAggregatesServiceTest {
 
     private OptionsAggregatesService optionsAggregatesService;
     private PolygonRestClient polygonClient;
 
-    // Replace with your actual API key or use environment variable
-    private static final String API_KEY = "3HrbQuqNplv2NvnBG_ZDPpmd0ogyuT6B";
+    private static final String API_KEY = System.getenv("POLYGON_API_KEY");
 
     @BeforeEach
     void setUp() {

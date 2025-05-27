@@ -14,8 +14,7 @@ public class OptionsChainServiceTest {
     private OptionsChainService optionsChainService;
     private PolygonRestClient polygonClient;
 
-    // Replace with your actual API key or use environment variable
-    private static final String API_KEY = "3HrbQuqNplv2NvnBG_ZDPpmd0ogyuT6B";
+    private static final String API_KEY = System.getenv("POLYGON_API_KEY");
 
     @BeforeEach
     void setUp() {
