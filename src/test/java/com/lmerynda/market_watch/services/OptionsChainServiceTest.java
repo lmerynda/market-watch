@@ -1,6 +1,7 @@
 package com.lmerynda.market_watch.services;
 
 import io.polygon.kotlin.sdk.rest.PolygonRestClient;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
@@ -9,6 +10,7 @@ import org.springframework.test.context.ActiveProfiles;
 
 @SpringBootTest
 @ActiveProfiles("test")
+@EnabledIfEnvironmentVariable(named = "POLYGON_API_KEY", matches = ".+")
 public class OptionsChainServiceTest {
 
     private OptionsChainService optionsChainService;

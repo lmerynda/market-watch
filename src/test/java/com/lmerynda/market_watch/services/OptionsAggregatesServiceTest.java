@@ -1,10 +1,12 @@
 package com.lmerynda.market_watch.services;
 
 import io.polygon.kotlin.sdk.rest.PolygonRestClient;
+import org.junit.jupiter.api.condition.EnabledIfEnvironmentVariable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.DisplayName;
 
+@EnabledIfEnvironmentVariable(named = "POLYGON_API_KEY", matches = ".+")
 public class OptionsAggregatesServiceTest {
 
     private OptionsAggregatesService optionsAggregatesService;
