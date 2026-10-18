@@ -1,6 +1,6 @@
 plugins {
 	id 'java'
-	id 'org.springframework.boot' version '4.0.0-SNAPSHOT'
+	id 'org.springframework.boot' version '4.0.8'
 	id 'io.spring.dependency-management' version '1.1.7'
 }
 
@@ -15,14 +15,14 @@ java {
 
 repositories {
 	mavenCentral()
-	maven { url 'https://repo.spring.io/milestone' }
-	maven { url 'https://repo.spring.io/snapshot' }
     maven { url "https://jitpack.io" }
 }
 
 dependencies {
+    implementation platform('io.ktor:ktor-bom:2.3.13')
+    implementation 'com.squareup.okio:okio:3.18.2'
     implementation 'com.github.polygon-io:client-jvm:v5.1.2' 
-    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.22'
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:2.4.21'
 	implementation 'org.springframework.boot:spring-boot-starter'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
